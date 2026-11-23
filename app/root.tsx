@@ -114,7 +114,7 @@ export function ErrorBoundary() {
     message = error.message;
   }
 
-  return (
+  const content = (
     <div className="container route-error">
       <p className="eyebrow">Error {status}</p>
       <h1>{message}</h1>
@@ -122,5 +122,15 @@ export function ErrorBoundary() {
         Back to home
       </Link>
     </div>
+  );
+
+  // Keep the header, cart and footer around error pages when root data loaded.
+  const data = useRouteLoaderData<RootLoader>('root');
+  if (!data) return content;
+
+  return (
+    <PageLayout layout={data.layout} cart={data.cart}>
+      {content}
+    </PageLayout>
   );
 }
