@@ -1,0 +1,11 @@
+// Cloudflare Workers deployment (alternative to Shopify Oxygen).
+// Build first with `npm run build`, then `npx wrangler deploy`.
+{
+  "name": "hydrogen-mini-store",
+  "main": "dist/server/index.js",
+  "compatibility_date": "2025-11-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "dist/client"
+  }
+}

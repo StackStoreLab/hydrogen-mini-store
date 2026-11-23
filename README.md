@@ -20,8 +20,10 @@ Requires Node 18+.
 ## Build / deploy
 ```bash
 npm run build                         # production build
-npx shopify hydrogen deploy           # deploy to Shopify Oxygen
+npx shopify hydrogen deploy           # Shopify Oxygen
+npx wrangler deploy                   # or Cloudflare Workers (wrangler.jsonc)
 ```
+Live preview: https://hydrogen-mini-store.stackstorelab.workers.dev
 
 ## Data source
 The store reads products from **mock.shop** by default (`app/lib/context.ts`).

@@ -7,3 +7,5 @@ node_modules
 .env
 .shopify
 .react-router
+h2_deploy_log.json
+.wrangler
